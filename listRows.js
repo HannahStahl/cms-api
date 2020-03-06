@@ -1,7 +1,7 @@
 import * as dynamoDbLib from "./libs/dynamodb-lib";
 import { success, failure } from "./libs/response-lib";
 
-export async function listRows(tableName, attributeType) {
+export async function listRows(event, tableName, attributeType) {
   const params = {
     TableName: tableName,
     KeyConditionExpression: "userId = :userId",

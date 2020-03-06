@@ -1,5 +1,5 @@
 import { listRows } from "../listRows";
 
 export async function main(event, context) {
-  return listRows(process.env.tagTableName, "tag");
+  return listRows(event, process.env.tagTableName, "tag");
 }
