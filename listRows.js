@@ -15,6 +15,6 @@ export async function listRows(event, tableName, attributeType) {
     const sortedRows = result.Items.sort((a, b) => a[`${attributeType}Rank`] - b[`${attributeType}Rank`]);
     return success(sortedRows);
   } catch (error) {
-    return failure({ status: false, error });
+    return failure({ status: false, error: `userId is equal to ${event.requestContext.identity.cognitoIdentityId}` });
   }
 }
