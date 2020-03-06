@@ -83,6 +83,7 @@ functions:
           path: category/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listCategories:
     handler: categories/list.main
@@ -100,6 +101,7 @@ functions:
           path: publishedCategories
           method: get
           cors: true
+          authorizer: aws_iam
 
   updateCategory:
     handler: categories/update.main
@@ -135,6 +137,7 @@ functions:
           path: item/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listAllItems:
     handler: items/list.main
@@ -143,6 +146,7 @@ functions:
           path: items
           method: get
           cors: true
+          authorizer: aws_iam
 
   listItems:
     handler: items/list.main
@@ -151,6 +155,7 @@ functions:
           path: items/{id}
           method: get
           cors: true
+          authorizer: aws_iam
   
   listAllPublishedItems:
     handler: items/listPublished.main
@@ -158,7 +163,8 @@ functions:
       - http:
           path: publishedItems
           method: get
-          cors: true  
+          cors: true
+          authorizer: aws_iam
 
   listPublishedItems:
     handler: items/listPublished.main
@@ -167,6 +173,7 @@ functions:
           path: publishedItems/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   updateItem:
     handler: items/update.main
@@ -193,6 +200,7 @@ functions:
           path: tags
           method: get
           cors: true
+          authorizer: aws_iam
 
   listAllItemsToTags:
     handler: itemsToTags/list.main
@@ -201,6 +209,7 @@ functions:
           path: itemsToTags
           method: get
           cors: true
+          authorizer: aws_iam
 
   listItemsToTags:
     handler: itemsToTags/list.main
@@ -209,6 +218,7 @@ functions:
           path: itemsToTags/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listColors:
     handler: colors/list.main
@@ -217,6 +227,7 @@ functions:
           path: colors
           method: get
           cors: true
+          authorizer: aws_iam
 
   listItemsToColors:
     handler: itemsToColors/list.main
@@ -225,6 +236,7 @@ functions:
           path: itemsToColors/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listSizes:
     handler: sizes/list.main
@@ -233,6 +245,7 @@ functions:
           path: sizes
           method: get
           cors: true
+          authorizer: aws_iam
 
   listItemsToSizes:
     handler: itemsToSizes/list.main
@@ -241,6 +254,7 @@ functions:
           path: itemsToSizes/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listPhotos:
     handler: photos/list.main
@@ -249,6 +263,7 @@ functions:
           path: photos
           method: get
           cors: true
+          authorizer: aws_iam
 
   listAllItemsToPhotos:
     handler: itemsToPhotos/list.main
@@ -257,6 +272,7 @@ functions:
           path: itemsToPhotos
           method: get
           cors: true
+          authorizer: aws_iam
 
   listItemsToPhotos:
     handler: itemsToPhotos/list.main
@@ -265,6 +281,7 @@ functions:
           path: itemsToPhotos/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   updateAttributes:
     handler: updateAttributes.main
