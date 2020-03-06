@@ -267,7 +267,6 @@ functions:
 
 # Create our resources with separate CloudFormation templates
 resources:
-  - ${file(resources/api-gateway.yml)}
   - ${file(resources/api-gateway-errors.yml)}
   - ${file(resources/dynamodb-table.yml)}
   - ${file(resources/s3-bucket.yml)}
