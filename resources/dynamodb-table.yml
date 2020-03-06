@@ -1,0 +1,151 @@
+Resources:
+  CategoriesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.categoryTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: categoryId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: categoryId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+  ItemsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.itemTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: itemId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: itemId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+  TagsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.tagTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: tagId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: tagId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+  ItemsToTagsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.itemToTagTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: itemToTagId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: itemToTagId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+  ColorsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.colorTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: colorId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: colorId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+  ItemsToColorsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.itemToColorTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: itemToColorId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: itemToColorId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+  SizesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.sizeTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: sizeId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: sizeId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+  ItemsToSizesTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.itemToSizeTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: itemToSizeId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: itemToSizeId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+  PhotosTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.photoTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: photoId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: photoId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
+  ItemsToPhotosTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.itemToPhotoTableName}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: itemToPhotoId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: itemToPhotoId
+          KeyType: RANGE
+      BillingMode: PAY_PER_REQUEST
