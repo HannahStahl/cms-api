@@ -11,7 +11,7 @@ custom:
   # Our stage is based on what is passed in when running serverless
   # commands. Or falls back to what we have set in the provider section.
   stage: ${opt:stage, self:provider.stage}
-  categoryTableName: ${self:custom.stage}-itemCategories
+  itemCategoryTableName: ${self:custom.stage}-itemCategories
   itemTableName: ${self:custom.stage}-items
   tagTableName: ${self:custom.stage}-itemTags
   itemToTagTableName: ${self:custom.stage}-itemsToTags
@@ -31,7 +31,7 @@ provider:
   # These environment variables are made available to our functions
   # under process.env
   environment:
-    categoryTableName: ${self:custom.categoryTableName}
+    itemCategoryTableName: ${self:custom.itemCategoryTableName}
     itemTableName: ${self:custom.itemTableName}
     tagTableName: ${self:custom.tagTableName}
     itemToTagTableName: ${self:custom.itemToTagTableName}
@@ -55,7 +55,7 @@ provider:
       # Restrict our IAM role permissions to
       # the specific table for the stage
       Resource:
-        - "Fn::GetAtt": [ CategoriesTable, Arn ]
+        - "Fn::GetAtt": [ ItemCategoriesTable, Arn ]
         - "Fn::GetAtt": [ ItemsTable, Arn ]
         - "Fn::GetAtt": [ TagsTable, Arn ]
         - "Fn::GetAtt": [ ItemsToTagsTable, Arn ]
@@ -80,9 +80,10 @@ functions:
     handler: categories/get.main
     events:
       - http:
-          path: category/{userId}/{id}
+          path: category/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listCategories:
     handler: categories/list.main
@@ -92,14 +93,6 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
-
-  listPublishedCategories:
-    handler: categories/listPublished.main
-    events:
-      - http:
-          path: publishedCategories/{userId}
-          method: get
-          cors: true
 
   updateCategory:
     handler: categories/update.main
@@ -132,9 +125,10 @@ functions:
     handler: items/get.main
     events:
       - http:
-          path: item/{userId}/{id}
+          path: item/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listAllItems:
     handler: items/list.main
@@ -152,23 +146,7 @@ functions:
           path: items/{id}
           method: get
           cors: true
-          authorizer: aws_iam
-  
-  listAllPublishedItems:
-    handler: items/listPublished.main
-    events:
-      - http:
-          path: publishedItems/{userId}
-          method: get
-          cors: true  
-
-  listPublishedItems:
-    handler: items/listPublished.main
-    events:
-      - http:
-          path: publishedItems/{userId}/{id}
-          method: get
-          cors: true
+          authorizer: aws_iam 
 
   updateItem:
     handler: items/update.main
@@ -192,81 +170,91 @@ functions:
     handler: tags/list.main
     events:
       - http:
-          path: tags/{userId}
+          path: tags
           method: get
           cors: true
+          authorizer: aws_iam
 
   listAllItemsToTags:
     handler: itemsToTags/list.main
     events:
       - http:
-          path: itemsToTags/{userId}
+          path: itemsToTags
           method: get
           cors: true
+          authorizer: aws_iam
 
   listItemsToTags:
     handler: itemsToTags/list.main
     events:
       - http:
-          path: itemsToTags/{userId}/{id}
+          path: itemsToTags/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listColors:
     handler: colors/list.main
     events:
       - http:
-          path: colors/{userId}
+          path: colors
           method: get
           cors: true
+          authorizer: aws_iam
 
   listItemsToColors:
     handler: itemsToColors/list.main
     events:
       - http:
-          path: itemsToColors/{userId}/{id}
+          path: itemsToColors/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listSizes:
     handler: sizes/list.main
     events:
       - http:
-          path: sizes/{userId}
+          path: sizes
           method: get
           cors: true
+          authorizer: aws_iam
 
   listItemsToSizes:
     handler: itemsToSizes/list.main
     events:
       - http:
-          path: itemsToSizes/{userId}/{id}
+          path: itemsToSizes/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   listPhotos:
     handler: photos/list.main
     events:
       - http:
-          path: photos/{userId}
+          path: photos
           method: get
           cors: true
+          authorizer: aws_iam
 
   listAllItemsToPhotos:
     handler: itemsToPhotos/list.main
     events:
       - http:
-          path: itemsToPhotos/{userId}
+          path: itemsToPhotos
           method: get
           cors: true
+          authorizer: aws_iam
 
   listItemsToPhotos:
     handler: itemsToPhotos/list.main
     events:
       - http:
-          path: itemsToPhotos/{userId}/{id}
+          path: itemsToPhotos/{id}
           method: get
           cors: true
+          authorizer: aws_iam
 
   updateAttributes:
     handler: updateAttributes.main
@@ -279,6 +267,7 @@ functions:
 
 # Create our resources with separate CloudFormation templates
 resources:
+  - ${file(resources/api-gateway.yml)}
   - ${file(resources/api-gateway-errors.yml)}
   - ${file(resources/dynamodb-table.yml)}
   - ${file(resources/s3-bucket.yml)}

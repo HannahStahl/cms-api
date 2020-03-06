@@ -1,8 +1,8 @@
 Resources:
-  CategoriesTable:
+  ItemCategoriesTable:
     Type: AWS::DynamoDB::Table
     Properties:
-      TableName: ${self:custom.categoryTableName}
+      TableName: ${self:custom.itemCategoryTableName}
       AttributeDefinitions:
         - AttributeName: userId
           AttributeType: S
@@ -149,3 +149,74 @@ Resources:
         - AttributeName: itemToPhotoId
           KeyType: RANGE
       BillingMode: PAY_PER_REQUEST
+Outputs:
+  ItemCategoriesTableArn:
+    Value:
+        Fn::GetAtt:
+        - ItemCategoriesTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-ItemCategoriesTableArn
+  ItemsTableArn:
+    Value:
+        Fn::GetAtt:
+        - ItemsTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-ItemsTableArn
+  TagsTableArn:
+    Value:
+        Fn::GetAtt:
+        - TagsTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-TagsTableArn
+  ItemsToTagsTableArn:
+    Value:
+        Fn::GetAtt:
+        - ItemsToTagsTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-ItemsToTagsTableArn
+  ColorsTableArn:
+    Value:
+        Fn::GetAtt:
+        - ColorsTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-ColorsTableArn
+  ItemsToColorsTableArn:
+    Value:
+        Fn::GetAtt:
+        - ItemsToColorsTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-ItemsToColorsTableArn
+  SizesTableArn:
+    Value:
+        Fn::GetAtt:
+        - SizesTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-SizesTableArn
+  ItemsToSizesTableArn:
+    Value:
+        Fn::GetAtt:
+        - ItemsToSizesTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-ItemsToSizesTableArn
+  PhotosTableArn:
+    Value:
+        Fn::GetAtt:
+        - PhotosTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-PhotosTableArn
+  ItemsToPhotosTableArn:
+    Value:
+        Fn::GetAtt:
+        - ItemsToPhotosTable
+        - Arn
+    Export:
+      Name: ${self:custom.stage}-ItemsToPhotosTableArn
