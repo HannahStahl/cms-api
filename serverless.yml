@@ -80,10 +80,9 @@ functions:
     handler: categories/get.main
     events:
       - http:
-          path: category/{id}
+          path: category/{userId}/{id}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listCategories:
     handler: categories/list.main
@@ -98,10 +97,9 @@ functions:
     handler: categories/listPublished.main
     events:
       - http:
-          path: publishedCategories
+          path: publishedCategories/{userId}
           method: get
           cors: true
-          authorizer: aws_iam
 
   updateCategory:
     handler: categories/update.main
@@ -134,10 +132,9 @@ functions:
     handler: items/get.main
     events:
       - http:
-          path: item/{id}
+          path: item/{userId}/{id}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listAllItems:
     handler: items/list.main
@@ -161,19 +158,17 @@ functions:
     handler: items/listPublished.main
     events:
       - http:
-          path: publishedItems
+          path: publishedItems/{userId}
           method: get
-          cors: true
-          authorizer: aws_iam
+          cors: true  
 
   listPublishedItems:
     handler: items/listPublished.main
     events:
       - http:
-          path: publishedItems/{id}
+          path: publishedItems/{userId}/{id}
           method: get
           cors: true
-          authorizer: aws_iam
 
   updateItem:
     handler: items/update.main
@@ -197,91 +192,81 @@ functions:
     handler: tags/list.main
     events:
       - http:
-          path: tags
+          path: tags/{userId}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listAllItemsToTags:
     handler: itemsToTags/list.main
     events:
       - http:
-          path: itemsToTags
+          path: itemsToTags/{userId}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listItemsToTags:
     handler: itemsToTags/list.main
     events:
       - http:
-          path: itemsToTags/{id}
+          path: itemsToTags/{userId}/{id}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listColors:
     handler: colors/list.main
     events:
       - http:
-          path: colors
+          path: colors/{userId}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listItemsToColors:
     handler: itemsToColors/list.main
     events:
       - http:
-          path: itemsToColors/{id}
+          path: itemsToColors/{userId}/{id}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listSizes:
     handler: sizes/list.main
     events:
       - http:
-          path: sizes
+          path: sizes/{userId}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listItemsToSizes:
     handler: itemsToSizes/list.main
     events:
       - http:
-          path: itemsToSizes/{id}
+          path: itemsToSizes/{userId}/{id}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listPhotos:
     handler: photos/list.main
     events:
       - http:
-          path: photos
+          path: photos/{userId}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listAllItemsToPhotos:
     handler: itemsToPhotos/list.main
     events:
       - http:
-          path: itemsToPhotos
+          path: itemsToPhotos/{userId}
           method: get
           cors: true
-          authorizer: aws_iam
 
   listItemsToPhotos:
     handler: itemsToPhotos/list.main
     events:
       - http:
-          path: itemsToPhotos/{id}
+          path: itemsToPhotos/{userId}/{id}
           method: get
           cors: true
-          authorizer: aws_iam
 
   updateAttributes:
     handler: updateAttributes.main

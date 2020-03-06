@@ -7,7 +7,7 @@ export async function main(event, context) {
     KeyConditionExpression: "userId = :userId",
     FilterExpression: "itemPublished = :itemPublished",
     ExpressionAttributeValues: {
-      ":userId": event.requestContext.identity.cognitoIdentityId,
+      ":userId": event.pathParameters.userId,
       ":itemPublished": true
     }
   };

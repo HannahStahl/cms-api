@@ -6,7 +6,7 @@ export async function listRows(event, tableName, attributeType) {
     TableName: tableName,
     KeyConditionExpression: "userId = :userId",
     ExpressionAttributeValues: {
-      ":userId": event.requestContext.identity.cognitoIdentityId
+      ":userId": event.pathParameters.userId
     }
   };
 

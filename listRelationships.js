@@ -6,7 +6,7 @@ export async function listRelationships(event, tableName, attributeType) {
     TableName: tableName,
     KeyConditionExpression: "userId = :userId",
     ExpressionAttributeValues: {
-      ":userId": event.requestContext.identity.cognitoIdentityId
+      ":userId": event.pathParameters.userId
     }
   };
   if (event.pathParameters && event.pathParameters.id) {
