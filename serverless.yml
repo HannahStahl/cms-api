@@ -91,6 +91,7 @@ functions:
           path: categories
           method: get
           cors: true
+          authorizer: aws_iam
 
   listPublishedCategories:
     handler: categories/listPublished.main
