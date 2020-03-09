@@ -13,7 +13,7 @@ export async function main(event, context) {
     ExpressionAttributeValues: {
       ":categoryName": data.categoryName || null,
       ":categoryPhoto": data.categoryPhoto || null,
-      ":categoryRank": data.categoryRank || null,
+      ":categoryRank": data.categoryRank,
       ":categoryPublished": data.categoryPublished || null,
     },
     ReturnValues: "ALL_NEW"
