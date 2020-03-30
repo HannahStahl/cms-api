@@ -139,14 +139,14 @@ functions:
           cors: true
           authorizer: aws_iam
 
-  listItems:
-    handler: items/list.main
-    events:
-      - http:
-          path: items/{categoryId}
-          method: get
-          cors: true
-          authorizer: aws_iam
+  # listItems:
+  #   handler: items/list.main
+  #   events:
+  #     - http:
+  #         path: items/{categoryId}
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
 
   listItemsOfSpecifiedType:
     handler: items/listSpecifiedType.main
