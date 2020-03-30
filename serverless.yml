@@ -67,113 +67,113 @@ provider:
         - "Fn::GetAtt": [ ItemsToPhotosTable, Arn ]
 
 functions:
-  # createCategory:
-  #   handler: categories/create.main
-  #   events:
-  #     - http:
-  #         path: categories
-  #         method: post
-  #         cors: true
-  #         authorizer: aws_iam
+  createCategory:
+    handler: categories/create.main
+    events:
+      - http:
+          path: categories
+          method: post
+          cors: true
+          authorizer: aws_iam
 
-  # getCategory:
-  #   handler: categories/get.main
-  #   events:
-  #     - http:
-  #         path: category/{id}
-  #         method: get
-  #         cors: true
-  #         authorizer: aws_iam
+  getCategory:
+    handler: categories/get.main
+    events:
+      - http:
+          path: category/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
 
-  # listCategories:
-  #   handler: categories/list.main
-  #   events:
-  #     - http:
-  #         path: categories/{cmsPageConfigId}
-  #         method: get
-  #         cors: true
-  #         authorizer: aws_iam
+  listCategories:
+    handler: categories/list.main
+    events:
+      - http:
+          path: categories/{cmsPageConfigId}
+          method: get
+          cors: true
+          authorizer: aws_iam
 
-  # updateCategory:
-  #   handler: categories/update.main
-  #   events:
-  #     - http:
-  #         path: categories/{id}
-  #         method: put
-  #         cors: true
-  #         authorizer: aws_iam
+  updateCategory:
+    handler: categories/update.main
+    events:
+      - http:
+          path: categories/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
 
-  # deleteCategory:
-  #   handler: categories/delete.main
-  #   events:
-  #     - http:
-  #         path: categories/{id}
-  #         method: delete
-  #         cors: true
-  #         authorizer: aws_iam
+  deleteCategory:
+    handler: categories/delete.main
+    events:
+      - http:
+          path: categories/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
 
-  # createItem:
-  #   handler: items/create.main
-  #   events:
-  #     - http:
-  #         path: items
-  #         method: post
-  #         cors: true
-  #         authorizer: aws_iam
+  createItem:
+    handler: items/create.main
+    events:
+      - http:
+          path: items
+          method: post
+          cors: true
+          authorizer: aws_iam
 
-  # getItem:
-  #   handler: items/get.main
-  #   events:
-  #     - http:
-  #         path: item/{id}
-  #         method: get
-  #         cors: true
-  #         authorizer: aws_iam
+  getItem:
+    handler: items/get.main
+    events:
+      - http:
+          path: item/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
 
-  # listAllItems:
-  #   handler: items/list.main
-  #   events:
-  #     - http:
-  #         path: items
-  #         method: get
-  #         cors: true
-  #         authorizer: aws_iam
+  listAllItems:
+    handler: items/list.main
+    events:
+      - http:
+          path: items
+          method: get
+          cors: true
+          authorizer: aws_iam
 
-  # listItems:
-  #   handler: items/list.main
-  #   events:
-  #     - http:
-  #         path: items/{categoryId}
-  #         method: get
-  #         cors: true
-  #         authorizer: aws_iam
+  listItems:
+    handler: items/list.main
+    events:
+      - http:
+          path: items/{categoryId}
+          method: get
+          cors: true
+          authorizer: aws_iam
 
-  # listItemsOfSpecifiedType:
-  #   handler: items/listSpecifiedType.main
-  #   events:
-  #     - http:
-  #         path: itemsOfSpecifiedType/{cmsPageConfigId}
-  #         method: get
-  #         cors: true
-  #         authorizer: aws_iam
+  listItemsOfSpecifiedType:
+    handler: items/listSpecifiedType.main
+    events:
+      - http:
+          path: itemsOfSpecifiedType/{cmsPageConfigId}
+          method: get
+          cors: true
+          authorizer: aws_iam
 
-  # updateItem:
-  #   handler: items/update.main
-  #   events:
-  #     - http:
-  #         path: items/{id}
-  #         method: put
-  #         cors: true
-  #         authorizer: aws_iam
+  updateItem:
+    handler: items/update.main
+    events:
+      - http:
+          path: items/{id}
+          method: put
+          cors: true
+          authorizer: aws_iam
 
-  # deleteItem:
-  #   handler: items/delete.main
-  #   events:
-  #     - http:
-  #         path: items/{id}
-  #         method: delete
-  #         cors: true
-  #         authorizer: aws_iam
+  deleteItem:
+    handler: items/delete.main
+    events:
+      - http:
+          path: items/{id}
+          method: delete
+          cors: true
+          authorizer: aws_iam
 
   listTags:
     handler: tags/list.main
