@@ -67,50 +67,50 @@ provider:
         - "Fn::GetAtt": [ ItemsToPhotosTable, Arn ]
 
 functions:
-  createCategory:
-    handler: categories/create.main
-    events:
-      - http:
-          path: categories
-          method: post
-          cors: true
-          authorizer: aws_iam
+  # createCategory:
+  #   handler: categories/create.main
+  #   events:
+  #     - http:
+  #         path: categories
+  #         method: post
+  #         cors: true
+  #         authorizer: aws_iam
 
-  getCategory:
-    handler: categories/get.main
-    events:
-      - http:
-          path: category/{id}
-          method: get
-          cors: true
-          authorizer: aws_iam
+  # getCategory:
+  #   handler: categories/get.main
+  #   events:
+  #     - http:
+  #         path: category/{id}
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
 
-  listCategories:
-    handler: categories/list.main
-    events:
-      - http:
-          path: categories/{cmsPageConfigId}
-          method: get
-          cors: true
-          authorizer: aws_iam
+  # listCategories:
+  #   handler: categories/list.main
+  #   events:
+  #     - http:
+  #         path: categories/{cmsPageConfigId}
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
 
-  updateCategory:
-    handler: categories/update.main
-    events:
-      - http:
-          path: categories/{id}
-          method: put
-          cors: true
-          authorizer: aws_iam
+  # updateCategory:
+  #   handler: categories/update.main
+  #   events:
+  #     - http:
+  #         path: categories/{id}
+  #         method: put
+  #         cors: true
+  #         authorizer: aws_iam
 
-  deleteCategory:
-    handler: categories/delete.main
-    events:
-      - http:
-          path: categories/{id}
-          method: delete
-          cors: true
-          authorizer: aws_iam
+  # deleteCategory:
+  #   handler: categories/delete.main
+  #   events:
+  #     - http:
+  #         path: categories/{id}
+  #         method: delete
+  #         cors: true
+  #         authorizer: aws_iam
 
   createItem:
     handler: items/create.main
