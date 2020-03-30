@@ -112,68 +112,68 @@ functions:
   #         cors: true
   #         authorizer: aws_iam
 
-  createItem:
-    handler: items/create.main
-    events:
-      - http:
-          path: items
-          method: post
-          cors: true
-          authorizer: aws_iam
+  # createItem:
+  #   handler: items/create.main
+  #   events:
+  #     - http:
+  #         path: items
+  #         method: post
+  #         cors: true
+  #         authorizer: aws_iam
 
-  getItem:
-    handler: items/get.main
-    events:
-      - http:
-          path: item/{id}
-          method: get
-          cors: true
-          authorizer: aws_iam
+  # getItem:
+  #   handler: items/get.main
+  #   events:
+  #     - http:
+  #         path: item/{id}
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
 
-  listAllItems:
-    handler: items/list.main
-    events:
-      - http:
-          path: items
-          method: get
-          cors: true
-          authorizer: aws_iam
+  # listAllItems:
+  #   handler: items/list.main
+  #   events:
+  #     - http:
+  #         path: items
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
 
-  listItems:
-    handler: items/list.main
-    events:
-      - http:
-          path: items/{categoryId}
-          method: get
-          cors: true
-          authorizer: aws_iam
+  # listItems:
+  #   handler: items/list.main
+  #   events:
+  #     - http:
+  #         path: items/{categoryId}
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
 
-  listItemsOfSpecifiedType:
-    handler: items/listSpecifiedType.main
-    events:
-      - http:
-          path: itemsOfSpecifiedType/{cmsPageConfigId}
-          method: get
-          cors: true
-          authorizer: aws_iam
+  # listItemsOfSpecifiedType:
+  #   handler: items/listSpecifiedType.main
+  #   events:
+  #     - http:
+  #         path: itemsOfSpecifiedType/{cmsPageConfigId}
+  #         method: get
+  #         cors: true
+  #         authorizer: aws_iam
 
-  updateItem:
-    handler: items/update.main
-    events:
-      - http:
-          path: items/{id}
-          method: put
-          cors: true
-          authorizer: aws_iam
+  # updateItem:
+  #   handler: items/update.main
+  #   events:
+  #     - http:
+  #         path: items/{id}
+  #         method: put
+  #         cors: true
+  #         authorizer: aws_iam
 
-  deleteItem:
-    handler: items/delete.main
-    events:
-      - http:
-          path: items/{id}
-          method: delete
-          cors: true
-          authorizer: aws_iam
+  # deleteItem:
+  #   handler: items/delete.main
+  #   events:
+  #     - http:
+  #         path: items/{id}
+  #         method: delete
+  #         cors: true
+  #         authorizer: aws_iam
 
   listTags:
     handler: tags/list.main
