@@ -8,7 +8,7 @@ export async function main(event, context) {
     FilterExpression: "cmsPageConfigId = :cmsPageConfigId",
     ExpressionAttributeValues: {
       ":userId": event.requestContext.identity.cognitoIdentityId,
-      ":cmsPageConfigId": event.pathParameters.cmsPageConfigId
+      ":cmsPageConfigId": event.pathParameters.id
     }
   };
 

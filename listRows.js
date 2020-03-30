@@ -9,9 +9,9 @@ export async function listRows(event, tableName, attributeType) {
       ":userId": event.requestContext.identity.cognitoIdentityId
     }
   };
-  if (event.pathParameters && event.pathParameters.cmsPageConfigId) {
+  if (event.pathParameters && event.pathParameters.id) {
     params.FilterExpression = "cmsPageConfigId = :cmsPageConfigId";
-    params.ExpressionAttributeValues[":cmsPageConfigId"] = event.pathParameters.cmsPageConfigId;
+    params.ExpressionAttributeValues[":cmsPageConfigId"] = event.pathParameters.id;
   }
 
   try {

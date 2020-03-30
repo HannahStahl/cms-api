@@ -9,9 +9,9 @@ export async function main(event, context) {
       ":userId": event.requestContext.identity.cognitoIdentityId
     }
   };
-  if (event.pathParameters && event.pathParameters.categoryId) {
+  if (event.pathParameters && event.pathParameters.id) {
     params.FilterExpression = "categoryId = :categoryId";
-    params.ExpressionAttributeValues[":categoryId"] = event.pathParameters.categoryId;
+    params.ExpressionAttributeValues[":categoryId"] = event.pathParameters.id;
   }
 
   try {
