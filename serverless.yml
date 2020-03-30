@@ -89,7 +89,7 @@ functions:
     handler: categories/list.main
     events:
       - http:
-          path: categories
+          path: categories/{cmsPageConfigId}
           method: get
           cors: true
           authorizer: aws_iam
@@ -143,10 +143,19 @@ functions:
     handler: items/list.main
     events:
       - http:
-          path: items/{id}
+          path: items/{categoryId}
           method: get
           cors: true
-          authorizer: aws_iam 
+          authorizer: aws_iam
+
+  listItemsOfSpecifiedType:
+    handler: items/listSpecifiedType.main
+    events:
+      - http:
+          path: itemsOfSpecifiedType/{cmsPageConfigId}
+          method: get
+          cors: true
+          authorizer: aws_iam
 
   updateItem:
     handler: items/update.main

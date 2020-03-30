@@ -5,14 +5,12 @@ export async function main(event, context) {
   const params = {
     TableName: process.env.itemTableName,
     KeyConditionExpression: "userId = :userId",
+    FilterExpression: "cmsPageConfigId = :cmsPageConfigId",
     ExpressionAttributeValues: {
-      ":userId": event.requestContext.identity.cognitoIdentityId
+      ":userId": event.requestContext.identity.cognitoIdentityId,
+      ":cmsPageConfigId": event.pathParameters.cmsPageConfigId
     }
   };
-  if (event.pathParameters && event.pathParameters.categoryId) {
-    params.FilterExpression = "categoryId = :categoryId";
-    params.ExpressionAttributeValues[":categoryId"] = event.pathParameters.categoryId;
-  }
 
   try {
     const result = await dynamoDbLib.call("query", params);

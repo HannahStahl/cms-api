@@ -9,6 +9,10 @@ export async function listRows(event, tableName, attributeType) {
       ":userId": event.requestContext.identity.cognitoIdentityId
     }
   };
+  if (event.pathParameters && event.pathParameters.cmsPageConfigId) {
+    params.FilterExpression = "cmsPageConfigId = :cmsPageConfigId";
+    params.ExpressionAttributeValues[":cmsPageConfigId"] = event.pathParameters.cmsPageConfigId;
+  }
 
   try {
     const result = await dynamoDbLib.call("query", params);

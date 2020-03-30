@@ -17,6 +17,7 @@ export async function main(event, context) {
       itemPublished: data.itemPublished,
       itemRank: data.itemRank,
       categoryId: data.categoryId,
+      cmsPageConfigId: data.cmsPageConfigId,
       createdAt: Date.now()
     }
   };
