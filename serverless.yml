@@ -89,6 +89,15 @@ functions:
     handler: categories/list.main
     events:
       - http:
+          path: categories
+          method: get
+          cors: true
+          authorizer: aws_iam
+  
+  listCategoriesOfSpecifiedType:
+    handler: categories/list.main
+    events:
+      - http:
           path: categories/{id}
           method: get
           cors: true
