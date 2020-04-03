@@ -16,6 +16,8 @@ export async function main(event, context) {
       itemOnSale: data.itemOnSale,
       itemPublished: data.itemPublished,
       itemRank: data.itemRank,
+      itemLink: data.itemLink,
+      itemHtml: data.itemHtml,
       categoryId: data.categoryId,
       cmsPageConfigId: data.cmsPageConfigId,
       createdAt: Date.now()

@@ -9,7 +9,7 @@ export async function main(event, context) {
       userId: event.requestContext.identity.cognitoIdentityId,
       itemId: event.pathParameters.id
     },
-    UpdateExpression: "SET itemName = :itemName, itemDescription = :itemDescription, itemPrice = :itemPrice, itemSalePrice = :itemSalePrice, itemOnSale = :itemOnSale, itemPublished = :itemPublished, itemRank = :itemRank, categoryId = :categoryId, cmsPageConfigId = :cmsPageConfigId",
+    UpdateExpression: "SET itemName = :itemName, itemDescription = :itemDescription, itemPrice = :itemPrice, itemSalePrice = :itemSalePrice, itemOnSale = :itemOnSale, itemPublished = :itemPublished, itemRank = :itemRank, itemLink = :itemLink, itemHtml = :itemHtml, categoryId = :categoryId, cmsPageConfigId = :cmsPageConfigId",
     ExpressionAttributeValues: {
       ":itemName": data.itemName || null,
       ":itemDescription": data.itemDescription || null,
@@ -18,6 +18,8 @@ export async function main(event, context) {
       ":itemOnSale": data.itemOnSale || null,
       ":itemPublished": data.itemPublished || null,
       ":itemRank": data.itemRank || null,
+      ":itemLink": data.itemLink || null,
+      ":itemHtml": data.itemHtml || null,
       ":categoryId": data.categoryId || null,
       ":cmsPageConfigId": data.cmsPageConfigId || null
     },
