@@ -18,10 +18,10 @@ export async function main(event, context) {
       itemRank: data.itemRank,
       itemLink: data.itemLink,
       itemHtml: data.itemHtml,
-      datePublished: data.datePublished,
       categoryId: data.categoryId,
       cmsPageConfigId: data.cmsPageConfigId,
-      createdAt: Date.now()
+      createdAt: Date.now(),
+      updatedAt: Date.now()
     }
   };
 
