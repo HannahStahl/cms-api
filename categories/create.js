@@ -13,6 +13,7 @@ export async function main(event, context) {
       categoryPhoto: data.categoryPhoto,
       categoryRank: data.categoryRank,
       categoryPublished: data.categoryPublished,
+      datePublished: data.datePublished,
       cmsPageConfigId: data.cmsPageConfigId,
       createdAt: Date.now()
     }

@@ -15,6 +15,7 @@ export async function main(event, context) {
       itemSalePrice: data.itemSalePrice,
       itemOnSale: data.itemOnSale,
       itemPublished: data.itemPublished,
+      datePublished: data.datePublished,
       itemRank: data.itemRank,
       itemLink: data.itemLink,
       itemHtml: data.itemHtml,
