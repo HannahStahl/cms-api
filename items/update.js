@@ -9,7 +9,7 @@ export async function main(event, context) {
       userId: event.requestContext.identity.cognitoIdentityId,
       itemId: event.pathParameters.id
     },
-    UpdateExpression: "SET itemName = :itemName, itemSubtitle = :itemSubtitle, itemDescription = :itemDescription, itemPrice = :itemPrice, itemSalePrice = :itemSalePrice, itemOnSale = :itemOnSale, itemPublished = :itemPublished, datePublished = :datePublished, itemRank = :itemRank, itemLink = :itemLink, itemHtml = :itemHtml, itemPdf = :itemPdf, categoryId = :categoryId, cmsPageConfigId = :cmsPageConfigId, updatedAt = :updatedAt",
+    UpdateExpression: "SET itemName = :itemName, itemSubtitle = :itemSubtitle, itemDescription = :itemDescription, itemPrice = :itemPrice, itemSalePrice = :itemSalePrice, itemOnSale = :itemOnSale, itemPublished = :itemPublished, datePublished = :datePublished, itemRank = :itemRank, itemLink = :itemLink, itemHtml = :itemHtml, itemPdf = :itemPdf, itemPdfLink = :itemPdfLink, categoryId = :categoryId, cmsPageConfigId = :cmsPageConfigId, updatedAt = :updatedAt",
     ExpressionAttributeValues: {
       ":itemName": data.itemName || null,
       ":itemSubtitle": data.itemSubtitle || null,
@@ -23,6 +23,7 @@ export async function main(event, context) {
       ":itemLink": data.itemLink || null,
       ":itemHtml": data.itemHtml || null,
       ":itemPdf": data.itemPdf || null,
+      ":itemPdfLink": data.itemPdfLink || null,
       ":categoryId": data.categoryId || null,
       ":cmsPageConfigId": data.cmsPageConfigId || null,
       ":updatedAt": Date.now()

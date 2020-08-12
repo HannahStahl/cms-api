@@ -21,6 +21,7 @@ export async function main(event, context) {
       itemLink: data.itemLink,
       itemHtml: data.itemHtml,
       itemPdf: data.itemPdf,
+      itemPdfLink: data.itemPdfLink,
       categoryId: data.categoryId,
       cmsPageConfigId: data.cmsPageConfigId,
       createdAt: Date.now(),
