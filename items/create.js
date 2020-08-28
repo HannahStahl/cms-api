@@ -11,6 +11,7 @@ export async function main(event, context) {
       itemId: uuid.v1(),
       itemName: data.itemName,
       itemSubtitle: data.itemSubtitle,
+      itemSourceDate: data.itemSourceDate,
       itemDescription: data.itemDescription,
       itemPrice: data.itemPrice,
       itemSalePrice: data.itemSalePrice,
