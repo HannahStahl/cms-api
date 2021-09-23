@@ -22,6 +22,7 @@
   "dependencies": {
     "kind-of": "^6.0.3",
     "minimist": "^1.2.3",
+    "set-value": "^4.1.0",
     "stripe": "^7.9.1",
     "tar": "^6.1.9",
     "trim-newlines": "^4.0.2",
